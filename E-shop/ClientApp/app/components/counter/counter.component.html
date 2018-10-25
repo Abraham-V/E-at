@@ -1,0 +1,60 @@
+<br />
+
+<p>Address: {{location}}</p>
+
+<p>Place: {{Selected}}</p>
+
+<p>Price: <strong>{{ Total }}</strong></p>
+
+<br />
+<br />
+
+<div class="panel-group" id="accordion">
+    <div *ngFor="let place of places; let i = index">
+        <div *ngIf="places[i].Time != -1 && (i == 0 || places[i].Place != places[i-1].Place)">
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}">
+                            {{ places[i].Place }} {{ places[i].Time }}
+                        </a>
+                    </h4>
+                </div>
+            </div>
+            <div id="collapse{{i}}" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="container" >
+                        <table class="table table-hover" style="width: 50%;">
+                            <thead>
+                                <tr>
+                                    <th>Food</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let laces of places; let j = index">
+                                <tr *ngIf="places[j].Place == places[i].Place">
+                                    <td> {{ places[j].Food }}</td>
+                                    <td> {{ places[j].Quantity }} </td>
+                                    <td> {{ places[j].Price }} $ </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-primary" (click)="addFood(j)">+</button>
+                                            <button type="button" class="btn btn-primary" (click)="removeFood(j)">-</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <button routerLink="/home" class="btn pull-left glyphicon glyphicon-arrow-left"> Back</button>
+    <button routerLink="/fetch-data" class="btn pull-right" (click)="savePlaces()">Next &nbsp; <span class='glyphicon glyphicon-arrow-right'></span></button>
+</div>

@@ -1,0 +1,27 @@
+<div class='main-nav'>
+    <div class='navbar navbar-inverse'>
+        <div class='navbar-header'>
+            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+                <span class='sr-only'>Toggle navigation</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+            <a class='navbar-brand' [routerLink]="['/home']">E-at</a>
+        </div>
+        <div class='clearfix'></div>
+        <div class='navbar-collapse collapse'>
+            <ul class='nav navbar-nav'>
+                <li [routerLinkActive]="['link-active']">
+                        <span class='glyphicon glyphicon-map-marker'></span> Address
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                        <span class='glyphicon glyphicon-list-alt'></span> Food
+                </li>
+                <li [routerLinkActive]="['link-active']">
+                        <span class='glyphicon glyphicon-ok'></span> Checkout
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

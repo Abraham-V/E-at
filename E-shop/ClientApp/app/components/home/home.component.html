@@ -1,0 +1,14 @@
+<br />
+<form>
+    Please enter your address or location:<br><br>
+    <input #ginput class="controls form-control" type="text" placeholder="Search..." name="location" style="width: 50%;"><br>
+</form>
+
+<br />
+
+<div #gmap style="width:100%;height:400px"></div>
+
+<br />
+<div>
+    <button (click)="savePlaces()" routerLink="/counter" class="btn pull-right">Next &nbsp; <span class='glyphicon glyphicon-arrow-right'></span></button>
+</div>

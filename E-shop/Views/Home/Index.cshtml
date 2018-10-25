@@ -1,0 +1,27 @@
+@model E_shop.Models.Food
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{var loco = "100";}
+
+<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPmx1aobZEMrB6Txg8pVabzZiPrp6ChH0&libraries=places"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+<script src="//code.angularjs.org/snapshot/angular-animate.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.min.js"></script>
+
+<script src="xlsx.full.min.js"></script>
+
+<link href="animations.css" rel="stylesheet" type="text/css">
+
+
+<script src="~/dist/vendor.js" asp-append-version="true"></script>
+@section scripts {
+    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+}

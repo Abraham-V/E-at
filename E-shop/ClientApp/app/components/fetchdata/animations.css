@@ -1,0 +1,7 @@
+﻿.fade-out.ng-hide {
+    opacity: 0;
+}
+
+.fade-out.ng-hide-add, .fade-out.ng-hide-remove {
+    transition: all linear 0.5s;
+}
